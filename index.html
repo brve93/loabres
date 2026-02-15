@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para ti 🌻</title>
+
+<style>
+body{
+    margin:0;
+    background: radial-gradient(circle at top,#1c1c3c,#0b0b18);
+    font-family:'Segoe UI',sans-serif;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+    text-align:center;
+}
+
+.scene{
+    position:absolute;
+    opacity:0;
+    transform:scale(.9);
+    transition:1s ease;
+}
+
+.active{
+    opacity:1;
+    transform:scale(1);
+}
+
+button{
+    margin-top:20px;
+    padding:12px 28px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    background:#ff4b5c;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    background:#ff1e40;
+}
+
+svg{
+    width:260px;
+    margin-bottom:20px;
+}
+
+/* Animación ramo */
+.ramo{
+    transform:translateY(60px);
+    opacity:0;
+    transition:1.5s ease;
+}
+
+.ramo.mostrar{
+    transform:translateY(0);
+    opacity:1;
+}
+
+/* corazones finales */
+.corazones{
+    font-size:30px;
+    animation:latido 1s infinite;
+}
+
+@keyframes latido{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.3);}
+    100%{transform:scale(1);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ESCENA 1 -->
+<div class="scene active" id="scene1">
+
+<svg viewBox="0 0 300 300">
+
+<!-- cabello ondulado más trabajado -->
+<path d="M80 120 
+Q60 40 150 50 
+Q240 40 220 120
+Q210 90 150 80
+Q90 90 80 120Z" fill="#3b2c20"/>
+
+<path d="M85 110 Q70 160 95 200" stroke="#3b2c20" stroke-width="18" fill="none"/>
+<path d="M215 110 Q230 160 205 200" stroke="#3b2c20" stroke-width="18" fill="none"/>
+
+<!-- cara -->
+<circle cx="150" cy="130" r="45" fill="#ffe0bd"/>
+<circle cx="135" cy="125" r="5"/>
+<circle cx="165" cy="125" r="5"/>
+<path d="M130 150 Q150 170 170 150" stroke="#000" stroke-width="3" fill="none"/>
+
+<!-- cuerpo -->
+<rect x="120" y="175" width="60" height="80" fill="#ff4b5c" rx="20"/>
+
+</svg>
+
+<h2>Tengo algo para ti antes que vayas a dormir y termine el día...</h2>
+<p>¿Quieres saber qué es?</p>
+<button onclick="nextScene()">SI</button>
+
+</div>
+
+
+<!-- ESCENA 2 -->
+<div class="scene" id="scene2">
+
+<svg viewBox="0 0 300 300">
+
+<!-- personaje -->
+<path d="M80 120 
+Q60 40 150 50 
+Q240 40 220 120
+Q210 90 150 80
+Q90 90 80 120Z" fill="#3b2c20"/>
+
+<circle cx="150" cy="130" r="45" fill="#ffe0bd"/>
+<circle cx="135" cy="125" r="5"/>
+<circle cx="165" cy="125" r="5"/>
+<path d="M130 150 Q150 170 170 150" stroke="#000" stroke-width="3" fill="none"/>
+<rect x="120" y="175" width="60" height="80" fill="#ff4b5c" rx="20"/>
+
+<!-- RAMO escondido detrás -->
+<g class="ramo" id="ramo">
+
+<!-- tallos -->
+<line x1="150" y1="200" x2="130" y2="250" stroke="green" stroke-width="5"/>
+<line x1="150" y1="200" x2="150" y2="250" stroke="green" stroke-width="5"/>
+<line x1="150" y1="200" x2="170" y2="250" stroke="green" stroke-width="5"/>
+
+<!-- girasol 1 -->
+<g transform="translate(130,180)">
+<circle r="15" fill="#5c3a1e"/>
+<g fill="#f5c400">
+<ellipse rx="8" ry="25" transform="rotate(0)"/>
+<ellipse rx="8" ry="25" transform="rotate(20)"/>
+<ellipse rx="8" ry="25" transform="rotate(40)"/>
+<ellipse rx="8" ry="25" transform="rotate(60)"/>
+<ellipse rx="8" ry="25" transform="rotate(80)"/>
+<ellipse rx="8" ry="25" transform="rotate(100)"/>
+<ellipse rx="8" ry="25" transform="rotate(120)"/>
+<ellipse rx="8" ry="25" transform="rotate(140)"/>
+</g>
+</g>
+
+<!-- girasol 2 -->
+<g transform="translate(170,170)">
+<circle r="15" fill="#5c3a1e"/>
+<g fill="#f5c400">
+<ellipse rx="8" ry="25" transform="rotate(0)"/>
+<ellipse rx="8" ry="25" transform="rotate(20)"/>
+<ellipse rx="8" ry="25" transform="rotate(40)"/>
+<ellipse rx="8" ry="25" transform="rotate(60)"/>
+<ellipse rx="8" ry="25" transform="rotate(80)"/>
+<ellipse rx="8" ry="25" transform="rotate(100)"/>
+<ellipse rx="8" ry="25" transform="rotate(120)"/>
+<ellipse rx="8" ry="25" transform="rotate(140)"/>
+</g>
+</g>
+
+</g>
+
+</svg>
+
+<h2>Quiero que algún día no solo seas mi San Valentín,</h2>
+<h3>sino la felicidad de todos mis días.</h3>
+
+<button onclick="escenaFinal()">Continuar ❤️</button>
+
+</div>
+
+
+<!-- ESCENA 3 FINAL -->
+<div class="scene" id="scene3">
+<h1 style="font-size:50px;">Te quiero ❤️</h1>
+<div class="corazones">❤️❤️❤️❤️❤️❤️❤️</div>
+</div>
+
+
+<script>
+function nextScene(){
+    document.getElementById("scene1").classList.remove("active");
+    document.getElementById("scene2").classList.add("active");
+
+    setTimeout(()=>{
+        document.getElementById("ramo").classList.add("mostrar");
+    },800);
+}
+
+function escenaFinal(){
+    document.getElementById("scene2").classList.remove("active");
+    document.getElementById("scene3").classList.add("active");
+}
+</script>
+
+</body>
+</html>
